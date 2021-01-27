@@ -13,7 +13,7 @@
         </v-list-item>
         <v-list-item>
             <v-spacer></v-spacer>
-            <textarea v-model="entry.comment" placeholder="your comment"></textarea>
+            <textarea v-model="entry.comment" placeholder="add a description" cols=100 rows=2></textarea>
             <v-spacer></v-spacer>
         </v-list-item>
         <v-card-actions>
@@ -42,16 +42,8 @@ export default {
             const video = document.querySelector("#video");
             const constraints = {
                 video: {
-                    width: {
-                        min: 1280,
-                        ideal: 1920,
-                        max: 2560,
-                    },
-                    height: {
-                        min: 720,
-                        ideal: 1080,
-                        max: 1440,
-                    },
+                    width: 400,
+                    height: 400
                 },
             };
             try {
@@ -62,12 +54,14 @@ export default {
             }
         },
         save() {
+            // draw current video-frame on canvas
             const video = document.querySelector("#video");
             const canvas = document.createElement("canvas");
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
             canvas.getContext("2d").drawImage(video, 0, 0);
             this.entry.image = canvas.toDataURL("image/png");
+
             this.$store.commit('add', { add: this.entry });
             this.$router.push({ name: 'home' });
         }

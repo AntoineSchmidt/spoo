@@ -1,9 +1,9 @@
 <template>
     <v-card class="mx-auto" height="100%" width="100%" max-width="500">
-        <Navigation title="Position"></Navigation>
+        <Navigation title="Position Details"></Navigation>
         <v-list-item>
             <v-spacer></v-spacer>
-            <v-img :src="entry.image">
+            <v-img :src="entry.image" width="100%">
             </v-img>
             <v-spacer></v-spacer>
         </v-list-item>
@@ -14,7 +14,7 @@
         </v-list-item>
         <v-list-item>
             <v-spacer></v-spacer>
-            <textarea v-model="comment" placeholder="your comment"></textarea>
+            <textarea v-model="comment" placeholder="your comment" cols=100 rows=2></textarea>
             <v-spacer></v-spacer>
         </v-list-item>
         <v-card-actions>

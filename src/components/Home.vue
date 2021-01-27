@@ -2,6 +2,8 @@
     <v-card class="mx-auto" height="100%" width="100%" max-width="500">
         <v-toolbar color="blue">
             <v-spacer></v-spacer>
+            <v-toolbar-title>Position Log</v-toolbar-title>
+            <v-spacer></v-spacer>
             <v-btn icon @click="$router.push({name: 'create'})">
                 <v-icon>mdi-plus-thick</v-icon>
             </v-btn>
